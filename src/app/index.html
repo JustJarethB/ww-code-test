@@ -6,6 +6,12 @@
     <title>Code test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <style>
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        appearance: none;
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript">
       window.ENV_VARS = {{{ toJson envVars }}}
