@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { calculateNationalInsurance, NationalInsuranceDataType } from "./api";
 import { Button, NumberInput, SubTitle, Panel, Text } from "./components/atoms";
 import { Header, TaxDifference, TaxInformation } from "./components/molecules";
 
 const App = () => {
-  useDispatch()
   const [income, setIncome] = useState(0);
   const [taxFrom2018, setTaxFrom2018] = useState<NationalInsuranceDataType>();
   const [taxFrom2019, setTaxFrom2019] = useState<NationalInsuranceDataType>();
