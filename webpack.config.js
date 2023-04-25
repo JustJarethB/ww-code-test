@@ -52,6 +52,7 @@ module.exports = () => {
           use: ['babel-loader'],
           exclude: /node_modules/,
         },
+        { test: /\.tsx?$/, loader: 'ts-loader' },
       ],
     },
     resolve: {
@@ -59,7 +60,7 @@ module.exports = () => {
         'node_modules',
       ],
       alias: {},
-      extensions: ['.js', '.json', '.jsx'],
+      extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
     },
   };
 

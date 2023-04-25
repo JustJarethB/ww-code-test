@@ -25,7 +25,16 @@ const bandsOnDate = (date) => {
 };
 
 // TODO this should do more than return the number it's given
-const slice = R.curry((floor, ceiling, num) => num);
+// It should: return the amount of num between floor and ceiling
+const slice = R.curry((floor, ceiling, num) => {
+  const MIN_FOR_SLICE = 0;
+  const MAX_FOR_SLICE = ceiling - floor;
+  const amountLessFloor = num - floor;
+  // const amoutLessFloorBound = Math.min(Math.max(MIN_FOR_SLICE, amountLessFloor), MAX_FOR_SLICE);
+  // return RD.decimal(amoutLessFloorBound)
+  return R.compose(RD.decimal, RD.max(MIN_FOR_SLICE), RD.min(MAX_FOR_SLICE))(amountLessFloor)
+
+});
 
 const calcForBand = R.curry(
   (income, { floor, ceiling, rate }) => RD.multiply(
